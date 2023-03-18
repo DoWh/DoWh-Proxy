@@ -9,11 +9,12 @@ const delay = require('delay');
 
 
 module.exports = async function(req,res){
-    console.log('post req')
+    console.log('get proxy start...')
     let links = req.body.urlList.split("\n")
     let page,result = [];
     for (let i = 0; i < links.length; i++) {
-        page = await getClearPage(links[0])
+        console.log('start work with '+ links[i])
+        page = await getClearPage(links[i])
         result = result.concat(getProxyFromPage(page))
         await delay(5000);
     }

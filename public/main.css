@@ -58,4 +58,22 @@ main textarea {
 aside {
     width: 30%;
 }
+.load {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+    margin-top: 10px;
+    display: none;
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+aside .load img {
+    width: 40px;
+    animation: spin 5s linear 0s infinite;
+}
+
 /* end aside */
