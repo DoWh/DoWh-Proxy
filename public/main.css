@@ -1,31 +1,47 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;500;600;700&family=Fredoka+One&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #fff;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    /* font-family: 'Fredoka One', cursive; */
+
 }
+
+textarea {
+    outline: none;
+}
+
 body {
-    background: -webkit-linear-gradient(90deg, #0f0f0f,#333333,#141414);
-    background: linear-gradient(90deg, #0f0f0f,#333333,#141414);
+    background: url('/img/background.jpg') no-repeat;
+    background-size: cover;
+}
+
+.border {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+h2 {
+    margin-left: 10px;
 }
 
 /* root */
 #root {
-    width: 60%;
+    width: 70%;
     margin: 50px auto;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
-    color: #F6F7F8;
-    
 }
 #root > * {
-    border: 1px solid #525252;
-    background: -webkit-linear-gradient(90deg, #525252,#433f4e);
-    background: linear-gradient(90deg, #525252,#433f4e);
-    border-radius: 5px;
     margin: 5px;
     padding: 10px;
+    background: transparent;
+    backdrop-filter: blur(20px);
 }
 #root fieldset {
     border: none;
@@ -50,6 +66,23 @@ main textarea {
     padding: 10px;
     border-radius: 5px;
     resize: none;
+    background: transparent;
+    backdrop-filter: blur(20px);
+}
+main .resultFilter {
+    display: flex;
+}
+main .resultFilter h2 {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 6px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.chosen {
+    background: #40455e;
+    text-decoration: underline;
 }
 /* end main */
 
@@ -57,6 +90,10 @@ main textarea {
 /* aside */
 aside {
     width: 30%;
+}
+aside div input{
+    background: transparent;
+    cursor: pointer;
 }
 .load {
     display: flex;
@@ -71,7 +108,7 @@ aside {
     to {transform:rotate(360deg);}
 }
 aside .load img {
-    width: 40px;
+    width: 60px;
     animation: spin 5s linear 0s infinite;
 }
 .hide {
