@@ -1,4 +1,4 @@
 module.exports = function (req,res) {
-    res.sendFile(__appdir + '/public/index.html')
+    res.sendFile('../public/index.html')
 }
 

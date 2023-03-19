@@ -1,4 +1,3 @@
-global.__appdir = __dirname;
 const express = require('express');
 const router = require('./routes/index')
 

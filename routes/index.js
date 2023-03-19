@@ -1,15 +1,18 @@
 const express = require('express')
-const guiRoute = require('./guiRoute')
-const formRoute = require('./formRoute')
-const validateProxyRoute = require('./validateProxyRoute')
+const guiController = require('../controllers/guiController')
+const grabAutoProxyController = require('../controllers/grabAutoProxyController')
+const grabProxyFromLinksController = require('../controllers/grabProxyFromLinksController')
 const router = express.Router()
 
-    router.use(express.static(__appdir+'/public'))
-    router.use('/', guiRoute)
-    router.use('/api/startProxy', formRoute)
-    router.use('/api/validateProxy', validateProxyRoute)
-    // router.use('/progress', progressController)
-    // router.use('/result', result)
+    router.use(express.static('../public'))
+
+    router.get('/', guiController)
+
+    router.use('/api', express.json());
+
+    router.post('/api/grabAutoProxy', grabAutoProxyController)
+
+    router.post('/api/grabProxyFromLinks', grabProxyFromLinksController)
 
 
 module.exports = router;
