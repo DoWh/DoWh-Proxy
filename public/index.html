@@ -15,7 +15,7 @@
         <main>
             <fieldset>
                 <h2>link for searching...</h2>
-                <textarea id="inputList" cols="30" rows="10"></textarea>
+                <textarea id="inputList" cols="30" rows="10">https://free-proxy-list.net/</textarea>
             </fieldset>
             <fieldset>
                 <h2>result...</h2>
@@ -26,12 +26,15 @@
             </fieldset>
         </main>
         <aside>
-            <fieldset>
-                <input id="grabProxy" type="submit" value="start">
-            </fieldset>
-            <div class="load">
+            <div>
+                <input id="grabProxy" type="submit" value="grab">
+            </div>
+            <div class="load hide">
                 <img src="/img/loading.png" alt="">
                 <span>waiting...</span>
+            </div>
+            <div>
+                <input id="validateProxy" type="submit" value="validate">
             </div>
         </aside>
     </div>

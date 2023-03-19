@@ -65,7 +65,6 @@ aside {
     width: 100%;
     font-size: 20px;
     margin-top: 10px;
-    display: none;
 }
 @keyframes spin {
     from {transform:rotate(0deg);}
@@ -74,6 +73,9 @@ aside {
 aside .load img {
     width: 40px;
     animation: spin 5s linear 0s infinite;
+}
+.hide {
+    display: none;
 }
 
 /* end aside */

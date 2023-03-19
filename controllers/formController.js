@@ -34,10 +34,10 @@ async function getClearPage(url){
 function getProxyFromPage(page){
 
     //clear page all simbol exept 0-9.<>
-    page = page.replace(/[^0-9.<>]/g,'')
+    page = page.replace(/[^0-9.<>:]/g,'')
 
     //regular expression for ip adress and port at 1 str
-    let regEx = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}[><]*\d{2,4}/g
+    let regEx = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}[:><]*\d{2,4}/g
 
     //test for wrong site, page or just guard
     if (page.length < 1) return [];
