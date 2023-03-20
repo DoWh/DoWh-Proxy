@@ -1,14 +1,15 @@
 const express = require('express')
+const path = require('path')
 const guiController = require('../controllers/guiController')
 const grabAutoProxyController = require('../controllers/grabAutoProxyController')
 const grabProxyFromLinksController = require('../controllers/grabProxyFromLinksController')
 const router = express.Router()
 
-    router.use(express.static('../public'))
-
+    router.use(express.static(path.resolve(__dirname, '..', 'public')))
+    
     router.get('/', guiController)
 
-    router.use('/api', express.json());
+    router.use('/', express.json());
 
     router.post('/api/grabAutoProxy', grabAutoProxyController)
 

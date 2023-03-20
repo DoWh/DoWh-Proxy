@@ -1,4 +1,15 @@
 module.exports = new class {
+    formatToObj(proxyList){
+        let ip,port;
+        for (let i = 0; i < proxyList.length; i++) {
+            [ip, port] = proxyList[i].split(':');
+            proxyList[i] = {
+                ip: ip,
+                port: port
+            }
+        }
+        return proxyList;
+    }
     proxyCorrect(proxy){
         let ip,port;
         [ip,port] = proxy.split(':');
@@ -28,5 +39,13 @@ module.exports = new class {
     }
     links(str){
         
+    }
+    addProtocol(proxyList,protocols){
+        for (let i = 0; i < proxyList.length; i++) {
+            proxyList[i] = Object.assign(proxyList[i], {
+                protocol: protocols[i]
+            })
+        }
+        return proxyList;
     }
 }
