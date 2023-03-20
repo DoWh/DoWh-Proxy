@@ -5,11 +5,11 @@ const grabAutoProxyController = require('../controllers/grabAutoProxyController'
 const grabProxyFromLinksController = require('../controllers/grabProxyFromLinksController')
 const router = express.Router()
 
+    router.use('/', express.json());
+
     router.use(express.static(path.resolve(__dirname, '..', 'public')))
     
     router.get('/', guiController)
-
-    router.use('/', express.json());
 
     router.post('/api/grabAutoProxy', grabAutoProxyController)
 

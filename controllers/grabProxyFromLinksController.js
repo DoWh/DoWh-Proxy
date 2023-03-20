@@ -6,6 +6,7 @@ const parse = require('../unit/parse');
 module.exports = async function(req,res){
     // res.send('grabProxyFromLinksController') // TEST CONTROLLER
     
+    // console.log(req.body.urlList)
     let urls = req.body.urlList.split("\n");
 
     //get proxy from pages!
