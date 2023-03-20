@@ -1,5 +1,6 @@
 const delay = require('delay');
 const grab = require('../unit/grab');
+const parse = require('../unit/parse'); //
 
 module.exports = async function(req,res){
     // res.send('grabProxyFromLinksController') // TEST CONTROLLER
@@ -16,4 +17,7 @@ module.exports = async function(req,res){
     let proxylist = await Promise.all(Prom)
 
     res.send(proxylist.flat())
+
+    // console.log(parse.proxyCorrect('159.203.61.169:8080'))
+    // res.send('end')
 }   

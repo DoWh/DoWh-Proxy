@@ -1,4 +1,13 @@
 module.exports = new class {
+    proxyCorrect(proxy){
+        let ip,port;
+        [ip,port] = proxy.split(':');
+        ip = ip.split('.');
+        for (let i = 0; i < ip.length; i++) {
+            if (Number(ip[i]) > 255) return false;
+        }
+        return true;
+    }
     proxies(page){
         //clear page all simbol exept 0-9.<>
         page = page.replace(/[^0-9.<>:]/g,'')
@@ -15,7 +24,7 @@ module.exports = new class {
             (value) => value.match(/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/) + ":" + value.match(/\d{2,4}$/)
         );
         // console.log(proxList)
-        return proxList;
+        return proxList.filter(this.proxyCorrect);
     }
     links(str){
         
