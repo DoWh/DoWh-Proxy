@@ -1,8 +1,16 @@
 import React from "react";
 
-function App(){
+import LinkSource from "./LinkSource";
+import ProxyResult from "./ProxyResult";
+import StartBtn from "./StartBtn";
+
+function App(): React.JSX.Element {
     return (
-        <div>App</div>
+        <div>
+            <LinkSource />
+            <ProxyResult />
+            <StartBtn />
+        </div>
     )
 }
 
